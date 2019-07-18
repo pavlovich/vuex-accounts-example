@@ -1,6 +1,6 @@
 <template>
 <div>
-  <form @submit.prevent="submitForm">
+  <form @submit.prevent="submitRegisterForm(formData)">
     <h3>Register</h3>
     <label>username</label>
     <input v-model="formData.username"/>
@@ -14,6 +14,7 @@
 </template>
 
 <script>
+  import { mapActions } from 'vuex';
 export default {
   data() {
     return {
@@ -25,9 +26,7 @@ export default {
     }
   },
   methods: {
-    submitForm() {
-      this.$store.dispatch('submitRegisterForm', this.formData)
-    }
+    ...mapActions(['submitRegisterForm'])
   }
 }
 </script>

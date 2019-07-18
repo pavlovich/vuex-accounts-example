@@ -9,12 +9,17 @@ const store = new Vuex.Store({
   state: {
   	users: []
   },
+	getters: {
+  	users(state){
+  		return state.users;
+		}
+  },
 	mutations: {
 		updateUsers(state, value) {
 			console.log('users state mutated')
 			state.users = value
 		}
 	}
-})
+});
 
 export default store

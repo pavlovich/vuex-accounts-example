@@ -9,6 +9,7 @@
 </template>
 
 <script>
+  import { mapGetters } from 'vuex';
 export default {
   meteor: {
     subscribe: {
@@ -19,9 +20,7 @@ export default {
     }
   },
   computed: {
-    users() {
-      return this.$store.state.users
-    }
+    ...mapGetters(['users'])
   }
 }
 </script>
